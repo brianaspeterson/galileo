@@ -93,8 +93,9 @@ const App = () => {
 
   const findDoctor = (e) => {
     e.preventDefault();
+    var regex = new RegExp(searchInfo, "g");
     const foundValue = doctorData.filter((doctor) => 
-      searchInfo.includes(doctor.first_name) || searchInfo.includes(doctor.last_name)
+      regex.test(doctor.first_name) || regex.test(doctor.last_name) || regex.test(`${doctor.first_name} ${doctor.last_name}`)
     );
 
     if (foundValue.length > 0 && foundDoctors.find(data => data.doctor_id === foundValue[0].doctor_id)) {
