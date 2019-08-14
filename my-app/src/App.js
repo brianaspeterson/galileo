@@ -138,7 +138,7 @@ const App = () => {
       <DoctorCard>{foundDoctors ? foundDoctors.map(
         (doctor) => {
       return(<Result key={doctor.doctor_id}>
-      <h3>{`${doctor.first_name} ${doctor.last_name} `}</h3>
+      <h2>{`${doctor.first_name} ${doctor.last_name} `}</h2>
       <div>{`DoB: ${doctor.dob} `}</div>
       <div>{`Degree: ${doctor.degree} `}</div>
       {showCurrentTasks(doctor.doctor_id)}
